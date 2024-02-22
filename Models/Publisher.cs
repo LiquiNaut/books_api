@@ -7,6 +7,10 @@ namespace BooksApi.Models
 {
     public class Publisher
     {
-        
+        public int Id { get; set; }
+        public string? Name { get; set; }
+
+        // Reference na zoznam kníh vydavateľstva
+        public ICollection<Book>? Books { get; set; }
     }
 }
