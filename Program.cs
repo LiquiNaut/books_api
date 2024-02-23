@@ -1,4 +1,6 @@
 using BooksApi.Data;
+using BooksApi.Repositories;
+using BooksApi.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +12,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//DI pre repozitare
+builder.Services.AddScoped<AuthorRepository>();
+builder.Services.AddScoped<BookRepository>();
+builder.Services.AddScoped<CategoryRepository>();
+builder.Services.AddScoped<LoanRepository>();
+builder.Services.AddScoped<PublisherRepository>();
+builder.Services.AddScoped<ReaderRepository>();
+
+//DI pre postgres 
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//DI pre UOW
+builder.Services.AddScoped<UnitOfWork>();
 
 var app = builder.Build();
 
