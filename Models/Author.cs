@@ -19,6 +19,6 @@ namespace BooksApi.Models
         [Required(ErrorMessage = "Národnosť je povinná")]
         public string Nationality { get; set; } = string.Empty;
         // Reference na zoznam kníh vydavateľstva
-        public ICollection<Book> Books { get; set; } = new List<Book>();
+        public ICollection<Book> Books { get; set; } = [];
     }
 }
