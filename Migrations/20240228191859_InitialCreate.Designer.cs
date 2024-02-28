@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BooksApi.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20240223192841_InitialCreate")]
+    [Migration("20240228191859_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
