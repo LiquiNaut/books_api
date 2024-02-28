@@ -26,17 +26,20 @@ namespace BooksApi.Data
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Author)
                 .WithMany(a => a.Books)
-                .HasForeignKey(b => b.AuthorId);
+                .HasForeignKey(b => b.AuthorId)
+                .IsRequired();
 
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Publisher)
                 .WithMany(p => p.Books)
-                .HasForeignKey(b => b.PublisherId);
+                .HasForeignKey(b => b.PublisherId)
+                .IsRequired();
 
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Category)
                 .WithMany(c => c.Books)
-                .HasForeignKey(b => b.CategoryId);
+                .HasForeignKey(b => b.CategoryId)
+                .IsRequired();
 
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Book)

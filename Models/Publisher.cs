@@ -14,6 +14,6 @@ namespace BooksApi.Models
         public string Name { get; set; } = string.Empty;
 
         // Reference na zoznam kníh vydavateľstva
-        public ICollection<Book>? Books { get; set; }
+        public ICollection<Book> Books { get; set; } = [];
     }
 }

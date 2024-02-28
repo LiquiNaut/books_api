@@ -40,6 +40,6 @@ namespace BooksApi.Models
         public ReaderType Type { get; set; }
 
         // Reference na zoznam vypožičaní čitateľa
-        public ICollection<Loan>? Loans { get; set; }
+        public ICollection<Loan> Loans { get; set; } = [];
     }
 }

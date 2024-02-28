@@ -49,6 +49,6 @@ namespace BooksApi.Models
         public BindingType Binding { get; set; }
 
         // Reference na zoznam vypožičaní kníh
-        public ICollection<Loan>? Loans { get; set; }
+        public ICollection<Loan> Loans { get; set; } = [];
     }
 }
