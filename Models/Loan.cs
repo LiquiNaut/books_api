@@ -26,5 +26,8 @@ namespace BooksApi.Models
 
         [Required(ErrorMessage = "Stav výpožičky je povinný")]
         public LoanState State { get; set; }
+
+        [Required(ErrorMessage = "Termín vrátenia je povinný")]
+        public DateTime DueDate { get; set; }
     }
 }
